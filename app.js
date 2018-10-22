@@ -7,8 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const courses = require("./routes/courses");
-const students = require("./routes/students");
-const teachers = require("./routes/teachers");
+// const students = require("./routes/students");
+// const teachers = require("./routes/teachers");
 
 
 var app = express();
@@ -31,18 +31,18 @@ app.post('/courses',courses.addCourse);
 app.put('/courses/:id/size', courses.incrementSize);
 app.delete('/courses/:id', courses.deleteCourse);
 
-app.get('/students', students.findAll);
-app.get('/students/:id', students.findOne);
-app.get('/students/fuzzystudent/:name', students.fuzzystudent);
-app.get('/students/courses/:id',students.getcourses);
-app.post('/students',students.addStudent);
-app.put('/students/:id/age', students.incrementAge);
-app.delete('/students/:id', students.deleteStudent);
-
-app.get('/teachers', teachers.findAll);
-app.get('/teachers/:id', teachers.findOne);
-app.post('/teachers',teachers.addTeacher);
-app.delete('/teachers/:id', teachers.deleteTeacher);
+// app.get('/students', students.findAll);
+// app.get('/students/:id', students.findOne);
+// app.get('/students/fuzzystudent/:name', students.fuzzystudent);
+// app.get('/students/courses/:id',students.getcourses);
+// app.post('/students',students.addStudent);
+// app.put('/students/:id/age', students.incrementAge);
+// app.delete('/students/:id', students.deleteStudent);
+//
+// app.get('/teachers', teachers.findAll);
+// app.get('/teachers/:id', teachers.findOne);
+// app.post('/teachers',teachers.addTeacher);
+// app.delete('/teachers/:id', teachers.deleteTeacher);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

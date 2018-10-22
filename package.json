@@ -16,5 +16,10 @@
     "mongodb-core": "^3.1.7",
     "mongoose": "^5.3.5",
     "morgan": "~1.9.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^3.4.2"
   }
 }

@@ -36,6 +36,7 @@ router.findOne = (req, res) => {
 }
 router.addCourse = (req, res) => {
     var course = new Course();
+    course._id=new mongoose.Types.ObjectId;
     course.name = req.body.name;
     course.type = req.body.type;
     course.size = req.body.size;
@@ -78,15 +79,25 @@ router.deleteCourse = (req, res) => {
             res.json({ message: 'Course Successfully Deleted!'});
     });
 }
-mongoose.connect('mongodb://localhost:27017/coursesdb');
-
-let db = mongoose.connection;
-
-db.on('error', function (err) {
-    console.log('Unable to Connect to [ ' + db.name + ' ]', err);
-});
-
-db.once('open', function () {
-    console.log('Successfully Connected to [ ' + db.name + ' ]');
+// mongoose.connect('mongodb://localhost:27017/coursesdb');
+//
+// let db = mongoose.connection;
+//
+// db.on('error', function (err) {
+//     console.log('Unable to Connect to [ ' + db.name + ' ]', err);
+// });
+//
+// db.once('open', function () {
+//     console.log('Successfully Connected to [ ' + db.name + ' ]');
+// });
+var config = require('../_config');
+var app = express();
+// *** mongoose *** ///
+mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
+    if(err) {
+        console.log('Error connecting to the database. ' + err);
+    } else {
+        console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
+    }
 });
 module.exports = router;
