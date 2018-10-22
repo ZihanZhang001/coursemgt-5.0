@@ -26,10 +26,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.get('/courses/size', course.findTotalSize);
 app.get('/courses', course.findAll);
-app.get('/courses/:code', course.findOne);
+app.get('/courses/:id', course.findOne);
 app.post('/courses',course.addCourse);
-app.put('/courses/:code/size', course.incrementSize);
-app.delete('/courses/:code', course.deleteCourse);
+app.put('/courses/:id/size', course.incrementSize);
+app.delete('/courses/:id', course.deleteCourse);
 
 app.get('/students', students.findAll);
 app.get('/students/:id', students.findOne);

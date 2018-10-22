@@ -26,12 +26,12 @@ router.findOne = (req, res) => {
 
     res.setHeader('Content-Type', 'application/json');
 
-    var cours = getByValue(course,req.params.code);
-
-    if (cours != null)
-        res.send(JSON.stringify(cours,null,5));
-    else
-        res.send('Course NOT Found!!');
+    Course.find({ "_id" : req.params.id },function(err, course) {
+        if (err)
+            res.json({ message: 'Course NOT Found!', errmsg : err } );
+        else
+            res.send(JSON.stringify(course,null,5));
+    });
 
 }
 router.addCourse = (req, res) => {
