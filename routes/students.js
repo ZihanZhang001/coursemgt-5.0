@@ -57,17 +57,20 @@ router.addStudent = (req, res) => {
     });
 }
 router.incrementAge = (req, res) => {
-    // Find the relevant donation based on params id passed in
-    // Add 1 to upvotes property of the selected donation based on its id
-    var student = getByValue(students,req.params.id);
 
-    if (student != null) {
-        student.age += 1;
-        res.json({status : 200, message : 'Add age Successful' , student : student });
-    }
-    else
-        res.send('Student NOT Found - Add age NOT Successful!!');
-
+    Student.findById(req.params.id, function(err,student) {
+        if (err)
+            res.json({ message: 'Student NOT Found!', errmsg : err } );
+        else {
+            student.age += 1;
+            student.save(function (err) {
+                if (err)
+                    res.json({ message: 'Student NOT Increment size!', errmsg : err } );
+                else
+                    res.json({ message: 'Student Successfully Increment size!', data: student });
+            });
+        }
+    });
 }
 router.deleteStudent = (req, res) => {
     //Delete the selected donation based on its id
