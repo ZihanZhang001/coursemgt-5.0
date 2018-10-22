@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1000001,
+    "name": "Abby",
+    "gender": "female",
+    "college": "Business",
+    "course": [
+      100001
+    ]
+  },
+  {
+    "id": 1000002,
+    "name": "Wang",
+    "gender": "male",
+    "college": "Math",
+    "course": [
+      100001
+    ]
+  },
+  {
+    "id": 1000003,
+    "name": "Make",
+    "gender": "male",
+    "college": "Computing",
+    "course": [
+      100001
+    ]
+  },
+  {
+    "id": 4091477,
+    "name": "zhang",
+    "gender": "male",
+    "college": "computing",
+    "course": "[10001]"
+  }
+]

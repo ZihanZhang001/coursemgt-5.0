@@ -1,0 +1,9 @@
+{
+  "id": 1000001,
+  "name": "Abby",
+  "gender": "female",
+  "college": "Business",
+  "course": [
+    100001
+  ]
+}

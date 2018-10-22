@@ -1,0 +1,11 @@
+{
+  "status": 200,
+  "message": "Add age Successful",
+  "student": {
+    "id": 1000001,
+    "name": "Abby",
+    "gender": "female",
+    "age": 19,
+    "college": "Business"
+  }
+}
