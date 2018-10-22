@@ -29,5 +29,36 @@ describe('Courses', function (){
 
         });
     });
-    
+    describe.only('POST /courses', function () {
+        it('should return confirmation message and update datastore', function(done) {
+            let course = {
+                name: "chinese" ,
+                type: "p",
+                size: 20,
+                room:"A03",
+                time:10.15
+            };
+            chai.request(server)
+                .post('/courses')
+                .send(course)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Course Successfully Added!' );
+                    done();
+                });
+        });
+        after(function  (done) {
+            chai.request(server)
+                .get('/courses')
+                .end(function(err, res) {
+                    let result = _.map(res.body, (course) => {
+                        return { name: course.name,
+                            size: course.size };
+                    }  );
+                    expect(result).to.include( { name: 'chinese', size: 20  } );
+
+                    done();
+                });
+        });
+    });
 });
