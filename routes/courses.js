@@ -35,21 +35,18 @@ router.findOne = (req, res) => {
 
 }
 router.addCourse = (req, res) => {
-    //Add a new donation to our list
-    var code = Math.floor((Math.random() * 100000) + 1); //Randomly generate an id
-    // parameters to store
-    // id (for id)
-    // req.body.paymenttype (for paymenttype)
-    // req.body.amount (for amount)
-    // 0 (for upvotes)
-    var currentSize = course.length;
-
-    course.push({"code" : code,"name":req.body.name, "type" : req.body.type, "size" : req.body.size, "lecturer" : req.body.lecturer,"room": req.body.room,"time":req.body.time});
-
-    if((currentSize + 1) == course.length)
-        res.json({ message: 'Course Added!'});
-    else
-        res.json({ message: 'Course NOT Added!'});
+    var course = new Course();
+    course.name = req.body.name;
+    course.type = req.body.type;
+    course.size = req.body.size;
+    course.room = req.body.room;
+    course.time = req.body.time;
+    course.save(function(err) {
+        if (err)
+            res.json({ message: 'Course NOT Added!', errmsg : err } );
+        else
+            res.json({ message: 'Course Successfully Added!', data: course });
+    });
 }
 router.incrementSize = (req, res) => {
     // Find the relevant donation based on params id passed in
