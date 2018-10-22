@@ -1,3 +1,14 @@
+POST http://localhost:3000/teachers/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"David","gender":"male","courses_id":"5bc4f5d582a78003ce4dc30e"}
+
+<> 2018-10-22T095504.200.json
+
+###
+
 GET http://localhost:3000/teachers/5bce37ee9f5b4f90ef56d037
 Accept: */*
 Cache-Control: no-cache
@@ -522,15 +533,6 @@ Cache-Control: no-cache
 Content-Type: application/json
 
 <> 2018-10-07T072030.200.json
-
-###
-
-GET http://localhost:3000/students/1000001
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-07T072027.200.json
 
 ###
 

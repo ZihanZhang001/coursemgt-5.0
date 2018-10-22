@@ -23,7 +23,19 @@ router.findOne = (req, res) => {
         else
             res.send(JSON.stringify(teacher,null,5));
     });
+}
+router.addTeacher = (req, res) => {
 
+    var teacher = new Teacher();
+    teacher.name = req.body.name;
+    teacher.gender = req.body.gender;
+    teacher.courses_id = req.body.courses_id;
+    teacher.save(function(err) {
+        if (err)
+            res.json({ message: 'Teacher NOT Added!', errmsg : err } );
+        else
+            res.json({ message: 'Teacher Successfully Added!', data: teacher });
+    });
 }
 mongoose.connect('mongodb://localhost:27017/coursesdb');
 
