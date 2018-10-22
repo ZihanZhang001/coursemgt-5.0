@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const course = require("./routes/courses");
+const courses = require("./routes/courses");
 const students = require("./routes/students");
 
 
@@ -24,12 +24,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.get('/courses/size', course.findTotalSize);
-app.get('/courses', course.findAll);
-app.get('/courses/:id', course.findOne);
-app.post('/courses',course.addCourse);
-app.put('/courses/:id/size', course.incrementSize);
-app.delete('/courses/:id', course.deleteCourse);
+app.get('/courses', courses.findAll);
+app.get('/courses/:id', courses.findOne);
+app.post('/courses',courses.addCourse);
+app.put('/courses/:id/size', courses.incrementSize);
+app.delete('/courses/:id', courses.deleteCourse);
 
 app.get('/students', students.findAll);
 app.get('/students/:id', students.findOne);

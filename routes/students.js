@@ -3,10 +3,7 @@ let students = require('../models/students');
 let express = require('express');
 let router = express.Router();
 
-function getByValue(array, id) {
-    var result  = array.filter(function(obj){return obj.id == id;} );
-    return result ? result[0] : null; // or undefined
-}
+
 function getByName(array, name) {
     var result  = array.filter(function(obj){return obj.name.toUpperCase() === name.toUpperCase();} );
     return result ? result[0] : null; // or undefined

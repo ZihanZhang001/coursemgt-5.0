@@ -69,21 +69,14 @@ router.incrementSize = (req, res) => {
 
 router.deleteCourse = (req, res) => {
     //Delete the selected donation based on its id
-    var cours = getByValue(course,req.params.code);
-    var index = course.indexOf(cours);
-
-    var currentSize = course.length;
-    course.splice(index, 1);
-
-    if((currentSize - 1) == course.length)
-        res.json({ message: 'Course Deleted!'});
-    else
-        res.json({ message: 'Course NOT Deleted!'});
-}
-router.findTotalSize = (req, res) => {
-
-    let size = getTotalSize(course);
-    res.json({totalsize : size});
+    Course.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            res.status(404);
+            res.json({message: 'Course NOT DELETED!', errmsg: err});
+        }
+        else
+            res.json({ message: 'Course Successfully Deleted!'});
+    });
 }
 mongoose.connect('mongodb://localhost:27017/coursesdb');
 
