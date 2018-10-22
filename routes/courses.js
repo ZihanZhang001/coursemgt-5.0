@@ -36,7 +36,6 @@ router.findOne = (req, res) => {
 }
 router.addCourse = (req, res) => {
     var course = new Course();
-    course._id=new mongoose.Types.ObjectId;
     course.name = req.body.name;
     course.type = req.body.type;
     course.size = req.body.size;

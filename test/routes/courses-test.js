@@ -28,20 +28,20 @@ describe('Courses', function (){
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(4);
+                    expect(res.body.length).to.equal(1);
                     let result = _.map(res.body, (course) => {
                         return { name: course.name,
                             type: course.type }
                     });
                     expect(result).to.include( { name: "math", type: "P"  } );
                     // expect(result).to.include( { name: "english", type: "P"  } );
-
+                    datastore.collection.drop();
                     done();
                 });
 
         });
     });
-    describe.only('POST /courses', function () {
+    describe('POST /courses', function () {
         it('should return confirmation message and update datastore', function(done) {
             let course = {
                 name: "chinese" ,
@@ -68,7 +68,7 @@ describe('Courses', function (){
                             size: course.size };
                     }  );
                     expect(result).to.include( { name: 'chinese', size: 20  } );
-
+                    datastore.collection.drop();
                     done();
                 });
         });
@@ -99,6 +99,53 @@ describe('Courses', function (){
                     datastore.collection.drop();
                     done();
                 });
+        });
+    });
+    describe('DELETE /courses/:id',() => {
+        describe('valid delete',() =>
+        {
+            it('should delete a course', function (done) {
+                chai.request(server)
+                    .get('/courses')
+                    .end(function(err,res){
+                        chai.request(server)
+                            .delete('/courses/'+res.body[0]._id)
+                            .end(function (err, res) {
+                                expect(res).to.have.status(200);
+                                expect(res.body).to.have.property('message', 'Course Successfully Deleted!');
+                                done();
+                            });
+                    })
+
+            });
+            after(function (done){
+                chai.request(server)
+                    .get('/courses')
+                    .end(function(err,res){
+                        let result=_.map(res.body,(course)=>{
+                            return{name:course.name};
+                        });
+                        // if(res.status===200){
+                        expect(result).to.not.include({name:"math"});
+
+                        // }else if(res.status===404){
+                        //     expect(result).to.include({id: "5bc7465912e3eb0c7aae835f"});
+                        // }
+                        done();
+                    });
+            });
+        });
+        describe('invalid delete',() => {
+            it('should return a 404 and a message for invalid course id', function (done) {
+                chai.request(server)
+                    .delete('/courses/1000004')
+                    .end(function (err, res) {
+                        expect(res).to.have.status(404);
+                        expect(res.body).to.have.property('message', 'Course NOT DELETED!');
+                        datastore.collection.drop();
+                        done();
+                    });
+            });
         });
     });
 });
