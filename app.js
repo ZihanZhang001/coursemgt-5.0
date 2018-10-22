@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const courses = require("./routes/courses");
 const students = require("./routes/students");
+const teachers = require("./routes/teachers");
 
 
 var app = express();
@@ -38,7 +39,7 @@ app.post('/students',students.addStudent);
 app.put('/students/:id/age', students.incrementAge);
 app.delete('/students/:id', students.deleteStudent);
 
-
+app.get('/teachers', teachers.findAll);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
