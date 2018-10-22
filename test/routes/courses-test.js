@@ -61,4 +61,32 @@ describe('Courses', function (){
                 });
         });
     });
+    describe('PUT /courses/:id/size', () => {
+        it('should return a message and the course increment size by 1', function(done) {
+            chai.request(server)
+                .get('/courses')
+                .end(function(err,res){
+                    chai.request(server)
+                        .put('/courses/'+res.body[0]._id+'/size')
+                        .end(function(err, res) {
+                            expect(res).to.have.status(200);
+                            let course = res.body.data ;
+                            expect(course).to.include( { name: "math", size: 17  } );
+                            datastore.collection.drop();
+                            done();
+                        });
+                })
+
+        });
+        it('should return a 404 and a message for invalid donation id', function(done) {
+            chai.request(server)
+                .put('/courses/1100001/size')
+                .end(function(err, res) {
+                    expect(res).to.have.status(404);
+                    expect(res.body).to.have.property('message','Course NOT Found!' ) ;
+                    datastore.collection.drop();
+                    done();
+                });
+        });
+    });
 });
