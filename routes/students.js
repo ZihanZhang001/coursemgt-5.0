@@ -81,6 +81,18 @@ router.deleteStudent = (req, res) => {
             res.json({ message: 'Student Successfully Deleted!'});
     });
 }
+
+router.fuzzystudent = (req,res) => {
+    res.setHeader('Content-Type', 'application/json');
+    const keyword = req.params.keyword;
+    const reg=new RegExp(keyword,'i');
+    Student.find({name:{$regex:reg}},function(err,student){
+        if(err)
+            res.send(err);
+        else
+            res.json(student,null,5);
+    });
+}
 mongoose.connect('mongodb://localhost:27017/coursesdb');
 
 let db = mongoose.connection;
