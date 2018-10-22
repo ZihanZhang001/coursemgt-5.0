@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'development';
+process.env.NODE_ENV = 'test';
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../../bin/www');
@@ -9,6 +9,18 @@ let _ = require('lodash' );
 chai.use(require('chai-things'));
 
 describe('Courses', function (){
+    beforeEach(function(done){
+        var newData=new datastore({
+            name:"math",
+            type:"P",
+            size:16,
+            room:"A01",
+            time:9.15
+        });
+        newData.save(function(err){
+            done();
+        });
+    });
     describe('GET /courses',  () => {
         it('should return all the courses in an array', function(done) {
             chai.request(server)
