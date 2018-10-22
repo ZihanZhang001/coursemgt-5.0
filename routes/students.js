@@ -22,12 +22,12 @@ router.findOne = (req, res) => {
 
     res.setHeader('Content-Type', 'application/json');
 
-    var student = getByValue(students,req.params.id);
-
-    if (student != null)
-        res.send(JSON.stringify(student,null,5));
-    else
-        res.send('Student NOT Found!!');
+    Student.find({ "_id" : req.params.id },function(err, student) {
+        if (err)
+            res.json({ message: 'Student NOT Found!', errmsg : err } );
+        else
+            res.send(JSON.stringify(student,null,5));
+    });
 
 }
 router.findOneByname = (req, res) => {
