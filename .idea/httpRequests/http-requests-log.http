@@ -1,3 +1,25 @@
+PUT http://localhost:3000/courses/5bce31f7ef7a8504d4120c76/size
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"mat","type": "P","size": 16,"room":"A01","time":9.15}
+
+<> 2018-10-22T092643.200.json
+
+###
+
+POST http://localhost:3000/courses/5bce31f7ef7a8504d4120c76/size
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"mat","type": "P","size": 16,"room":"A01","time":9.15}
+
+<> 2018-10-22T092636.404.html
+
+###
+
 POST http://localhost:3000/courses/
 Accept: */*
 Cache-Control: no-cache
@@ -505,28 +527,6 @@ Content-Type: application/json
 {"id":0,"name":"zhang","gender":"male","college":"computing","course":"[10001]"}
 
 <> 2018-10-07T064549.200.json
-
-###
-
-POST http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"name":"zhang","gender":"male","college":"computing","course":"[10001]"}
-
-<> 2018-10-07T064543.200.json
-
-###
-
-GET http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"name":"zhang","gender":"male","college":"computing"}
-
-<> 2018-10-07T064426.200.json
 
 ###
 

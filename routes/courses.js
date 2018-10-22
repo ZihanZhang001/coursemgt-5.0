@@ -49,18 +49,24 @@ router.addCourse = (req, res) => {
     });
 }
 router.incrementSize = (req, res) => {
-    // Find the relevant donation based on params id passed in
-    // Add 1 to upvotes property of the selected donation based on its id
-    var cours = getByValue(course,req.params.code);
 
-    if (cours != null) {
-        cours.size += 1;
-        res.json({status : 200, message : 'Add size Successful' , cours : cours });
-    }
-    else
-        res.send('Course NOT Found - Add size NOT Successful!!');
-
+    Course.findById(req.params.id, function(err,course) {
+        if (err) {
+            res.status(404);
+            res.json({message: 'Course NOT Found!', errmsg: err});
+        }
+        else {
+            course.size += 1;
+            course.save(function (err) {
+                if (err)
+                    res.json({ message: 'Course NOT Increment size!', errmsg : err } );
+                else
+                    res.json({ message: 'Course Successfully Increment size!', data: course });
+            });
+        }
+    });
 }
+
 router.deleteCourse = (req, res) => {
     //Delete the selected donation based on its id
     var cours = getByValue(course,req.params.code);
