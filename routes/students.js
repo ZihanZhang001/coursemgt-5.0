@@ -1,3 +1,4 @@
+let mongoose = require('mongoose');
 let students = require('../models/students');
 let express = require('express');
 let router = express.Router();
@@ -82,4 +83,16 @@ router.deleteStudent = (req, res) => {
     else
         res.json({ message: 'Students NOT Deleted!'});
 }
+mongoose.connect('mongodb://localhost:27017/coursesdb');
+
+let db = mongoose.connection;
+
+db.on('error', function (err) {
+    console.log('Unable to Connect to [ ' + db.name + ' ]', err);
+});
+
+db.once('open', function () {
+    console.log('Successfully Connected to [ ' + db.name + ' ]');
+});
+module.exports = router;
 module.exports = router;

@@ -1,7 +1,12 @@
-const students = [
-    {id: 1000001, name: "Abby",gender:'female',age:18,college:"Business"},
-    {id: 1000002, name:"Wang",gender:'male',age:19,college:"Math"},
-    {id: 1000003, name:"Make",gender:'male',age:16,college:"Computing"}
-];
+let mongoose = require('mongoose');
 
-module.exports = students;
+let StudentsSchema = new mongoose.Schema({
+        name: String,
+        gender: String,
+        age: Number,
+        college: String,
+        courses_id:[{type: mongoose.Schema.ObjectId, ref:'Courses'}]
+    },
+    { collection: 'students' });
+
+module.exports = mongoose.model('Students', StudentsSchema);

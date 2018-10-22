@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const course = require("./routes/course");
 const students = require("./routes/students");
-const selectcourses = require("./routes/selectcourses");
+
 
 var app = express();
 
@@ -38,10 +38,7 @@ app.post('/students',students.addStudent);
 app.put('/students/:id/age', students.incrementAge);
 app.delete('/students/:id', students.deleteStudent);
 
-app.get('/selectcourses', selectcourses.findAll);
-app.get('/selectcourses/:code', selectcourses.findOne);
-app.post('/selectcourses',selectcourses.addRecord);
-app.delete('/selectcourses/:code', selectcourses.deleteRecord);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
