@@ -1,3 +1,36 @@
+GET http://localhost:3000/courses
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"code":0,"coursecode":10002,"stuid":1000003,"time":"09/08/2018"}
+
+<> 2018-10-22T092003.200.json
+
+###
+
+GET http://localhost:3000/course
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"code":0,"coursecode":10002,"stuid":1000003,"time":"09/08/2018"}
+
+<> 2018-10-22T091648.500.json
+
+###
+
+GET http://localhost:3000/courses
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"code":0,"coursecode":10002,"stuid":1000003,"time":"09/08/2018"}
+
+<> 2018-10-22T091630.404.html
+
+###
+
 GET http://localhost:3000/selectcourses/
 Accept: */*
 Cache-Control: no-cache
@@ -494,39 +527,6 @@ Content-Type: application/json
 {"id":0,"name":"zhang","gender":"male","college":"computing"}
 
 <> 2018-10-07T063431.200.json
-
-###
-
-GET http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"name":"zhang","gender":"male","college":"computing"}
-
-<> 2018-10-07T063425.200.json
-
-###
-
-GET http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"name":"zhang","gender":"male","college":"computing"}
-
-<> 2018-10-07T063345.200.json
-
-###
-
-POST http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"name":"zhang","gender":"male","college":"computing"}
-
-<> 2018-10-07T063338.200.json
 
 ###
 

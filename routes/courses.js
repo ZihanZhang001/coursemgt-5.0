@@ -1,8 +1,8 @@
 let mongoose = require('mongoose');
-let course = require('../models/course');
+let course = require('../models/courses');
 let express = require('express');
 let router = express.Router();
-
+var Course = require('../models/courses');
 function getByValue(array, code) {
     var result  = array.filter(function(obj){return obj.code == code;} );
     return result ? result[0] : null; // or undefined
@@ -15,7 +15,12 @@ function getTotalSize(array) {
 router.findAll = (req, res) => {
     // Return a JSON representation of our list
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(course,null,5));
+    Course.find(function(err, courses) {
+        if (err)
+            res.send(err);
+
+        res.send(JSON.stringify(courses,null,5));
+    });
 }
 router.findOne = (req, res) => {
 
