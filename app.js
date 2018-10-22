@@ -42,6 +42,7 @@ app.delete('/students/:id', students.deleteStudent);
 app.get('/teachers', teachers.findAll);
 app.get('/teachers/:id', teachers.findOne);
 app.post('/teachers',teachers.addTeacher);
+app.delete('/teachers/:id', teachers.deleteTeacher);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

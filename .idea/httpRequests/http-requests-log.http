@@ -1,3 +1,14 @@
+DELETE http://localhost:3000/teachers/5bce3928bf3c5e06131e7d1f
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"David","gender":"male","courses_id":"5bc4f5d582a78003ce4dc30e"}
+
+<> 2018-10-22T095607.200.json
+
+###
+
 POST http://localhost:3000/teachers/
 Accept: */*
 Cache-Control: no-cache
@@ -524,15 +535,6 @@ Cache-Control: no-cache
 Content-Type: application/json
 
 <> 2018-10-08T100734.200.json
-
-###
-
-GET http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-07T072030.200.json
 
 ###
 

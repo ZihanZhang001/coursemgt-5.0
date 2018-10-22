@@ -37,6 +37,15 @@ router.addTeacher = (req, res) => {
             res.json({ message: 'Teacher Successfully Added!', data: teacher });
     });
 }
+router.deleteTeacher = (req, res) => {
+    //Delete the selected donation based on its id
+    Teacher.findByIdAndRemove(req.params.id, function(err) {
+        if (err)
+            res.json({ message: 'Teacher NOT DELETED!', errmsg : err } );
+        else
+            res.json({ message: 'Teacher Successfully Deleted!'});
+    });
+}
 mongoose.connect('mongodb://localhost:27017/coursesdb');
 
 let db = mongoose.connection;
