@@ -43,21 +43,18 @@ router.findOneByname = (req, res) => {
 
 }
 router.addStudent = (req, res) => {
-    //Add a new donation to our list
-    var id = Math.floor((Math.random() * 10000000) + 1); //Randomly generate an id
-    // parameters to store
-    // id (for id)
-    // req.body.paymenttype (for paymenttype)
-    // req.body.amount (for amount)
-    // 0 (for upvotes)
-    var currentSize = students.length;
-
-    students.push({"id" : id,"name":req.body.name, "gender" : req.body.gender,"age":req.body.age, "college" : req.body.college,"course":req.body.course});
-
-    if((currentSize + 1) == students.length)
-        res.json({ message: 'Student Added!'});
-    else
-        res.json({ message: 'Student NOT Added!'});
+    var student = new Student();
+    student.name = req.body.name;
+    student.gender = req.body.gender;
+    student.age = req.body.age;
+    student.college = req.body.college;
+    student.courses_id =req.body. courses_id;
+    student.save(function(err) {
+        if (err)
+            res.json({ message: 'Student NOT Added!', errmsg : err } );
+        else
+            res.json({ message: 'Student Successfully Added!', data: student });
+    });
 }
 router.incrementAge = (req, res) => {
     // Find the relevant donation based on params id passed in

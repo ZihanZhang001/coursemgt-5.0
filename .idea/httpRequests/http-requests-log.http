@@ -1,3 +1,25 @@
+POST http://localhost:3000/students/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Abby","gender":"female","age":18,"college":"Business","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61282a78003ce4dc30f"]}
+
+<> 2018-10-22T094036.200.json
+
+###
+
+POST http://localhost:3000/students/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Abby","gender":'female',"age":18,"college":"Business","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61282a78003ce4dc30f"]}
+
+<> 2018-10-22T094011.400.html
+
+###
+
 GET http://localhost:3000/students/5bc50b7bc6fff5975531bdb9
 Accept: */*
 Cache-Control: no-cache
@@ -505,28 +527,6 @@ Content-Type: application/json
 {10002}
 
 <> 2018-10-07T065507.400.html
-
-###
-
-PUT http://localhost:3000/students/1000001
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-10002
-
-<> 2018-10-07T065453.400.html
-
-###
-
-GET http://localhost:3000/students/1000001
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"id":0,"name":"zhang","gender":"male","college":"computing","course":[10001]}
-
-<> 2018-10-07T065437.200.json
 
 ###
 
