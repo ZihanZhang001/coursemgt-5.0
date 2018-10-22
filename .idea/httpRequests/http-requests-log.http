@@ -1,3 +1,14 @@
+DELETE http://localhost:3000/students/5bce35c4c3fdbd056a24816a/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Abby","gender":"female","age":18,"college":"Business","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61282a78003ce4dc30f"]}
+
+<> 2018-10-22T094255.200.json
+
+###
+
 PUT http://localhost:3000/students/5bce35c4c3fdbd056a24816a/age
 Accept: */*
 Cache-Control: no-cache
@@ -516,17 +527,6 @@ Content-Type: application/json
 {"course":10002}
 
 <> 2018-10-07T070436.200.json
-
-###
-
-GET http://localhost:3000/students/1000001
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"course":10002}
-
-<> 2018-10-07T070223.200.json
 
 ###
 

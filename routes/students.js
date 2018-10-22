@@ -74,16 +74,12 @@ router.incrementAge = (req, res) => {
 }
 router.deleteStudent = (req, res) => {
     //Delete the selected donation based on its id
-    var student = getByValue(students,req.params.id);
-    var index = students.indexOf(student);
-
-    var currentSize = students.length;
-    students.splice(index, 1);
-
-    if((currentSize - 1) == students.length)
-        res.json({ message: 'Students Deleted!'});
-    else
-        res.json({ message: 'Students NOT Deleted!'});
+    Student.findByIdAndRemove(req.params.id, function(err) {
+        if (err)
+            res.json({ message: 'Student NOT DELETED!', errmsg : err } );
+        else
+            res.json({ message: 'Student Successfully Deleted!'});
+    });
 }
 mongoose.connect('mongodb://localhost:27017/coursesdb');
 
