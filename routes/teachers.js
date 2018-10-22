@@ -13,7 +13,18 @@ router.findAll = (req, res) => {
         res.send(JSON.stringify(teachers,null,5));
     });
 }
+router.findOne = (req, res) => {
 
+    res.setHeader('Content-Type', 'application/json');
+
+    Teacher.find({ "_id" : req.params.id },function(err, teacher) {
+        if (err)
+            res.json({ message: 'Teacher NOT Found!', errmsg : err } );
+        else
+            res.send(JSON.stringify(teacher,null,5));
+    });
+
+}
 mongoose.connect('mongodb://localhost:27017/coursesdb');
 
 let db = mongoose.connection;

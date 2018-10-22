@@ -40,6 +40,7 @@ app.put('/students/:id/age', students.incrementAge);
 app.delete('/students/:id', students.deleteStudent);
 
 app.get('/teachers', teachers.findAll);
+app.get('/teachers/:id', teachers.findOne);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

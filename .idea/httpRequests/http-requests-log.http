@@ -1,3 +1,25 @@
+GET http://localhost:3000/teachers/5bce37ee9f5b4f90ef56d037
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Abby","gender":"female","age":18,"college":"Business","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61282a78003ce4dc30f"]}
+
+<> 2018-10-22T095349.200.json
+
+###
+
+GET http://localhost:3000/teachers
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name": "Abby","gender":"female","age":18,"college":"Business","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61282a78003ce4dc30f"]}
+
+<> 2018-10-22T095323.200.json
+
+###
+
 GET http://localhost:3000/courses
 Accept: */*
 Cache-Control: no-cache
@@ -509,24 +531,6 @@ Cache-Control: no-cache
 Content-Type: application/json
 
 <> 2018-10-07T072027.200.json
-
-###
-
-DELETE http://localhost:3000/students/1000001
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-07T072024.200.json
-
-###
-
-GET http://localhost:3000/students/1000001
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-07T072016.200.json
 
 ###
 
