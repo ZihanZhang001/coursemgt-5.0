@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7818b94-8518-48c6-92af-4c49eee79fd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2018-10-22T093011.200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-07T064549.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-07T064612.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-10-07T064618.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/courses.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/courses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/students.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/students.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -113,8 +105,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/students.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" selection-end-column="45" />
+            <state relative-caret-position="253">
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -1542,12 +1534,12 @@
       <workItem from="1539535177509" duration="1322000" />
       <workItem from="1539636942480" duration="209000" />
       <workItem from="1540133143542" duration="8000" />
-      <workItem from="1540238309996" duration="2206000" />
+      <workItem from="1540238309996" duration="2236000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30485000" />
+    <option name="totallyTimeSpent" value="30515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="418" y="23" width="951" height="801" extended-state="0" />
@@ -1695,8 +1687,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/students.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" selection-end-column="45" />
+        <state relative-caret-position="253">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
         </state>
       </provider>
     </entry>

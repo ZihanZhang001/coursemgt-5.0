@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-let students = require('../models/students');
+var Student = require('../models/students');
 let express = require('express');
 let router = express.Router();
 
@@ -11,7 +11,12 @@ function getByName(array, name) {
 router.findAll = (req, res) => {
     // Return a JSON representation of our list
     res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(students,null,5));
+    Student.find(function(err, students) {
+        if (err)
+            res.send(err);
+
+        res.send(JSON.stringify(students,null,5));
+    });
 }
 router.findOne = (req, res) => {
 
