@@ -68,4 +68,51 @@ describe('Teachers', function (){
                 });
         });
     });
+    describe('DELETE /teachers/:id',() => {
+        describe('valid delete',() =>
+        {
+            it('should delete a teacher', function (done) {
+                chai.request(server)
+                    .get('/teachers')
+                    .end(function(err,res){
+                        chai.request(server)
+                            .delete('/teachers/'+res.body[0]._id)
+                            .end(function (err, res) {
+                                expect(res).to.have.status(200);
+                                expect(res.body).to.have.property('message', 'Teacher Successfully Deleted!');
+                                done();
+                            });
+                    })
+
+            });
+            after(function (done){
+                chai.request(server)
+                    .get('/teachers')
+                    .end(function(err,res){
+                        let result=_.map(res.body,(teacher)=>{
+                            return{name:teacher.name};
+                        });
+                        // if(res.status===200){
+                        expect(result).to.not.include({name:"David"});
+
+                        // }else if(res.status===404){
+                        //     expect(result).to.include({id: "5bc7465912e3eb0c7aae835f"});
+                        // }
+                        done();
+                    });
+            });
+        });
+        describe('invalid delete',() => {
+            it('should return a 404 and a message for invalid teacher id', function (done) {
+                chai.request(server)
+                    .delete('/teachers/1000004')
+                    .end(function (err, res) {
+                        expect(res).to.have.status(404);
+                        expect(res.body).to.have.property('message', 'Teacher NOT DELETED!');
+                        datastore.collection.drop();
+                        done();
+                    });
+            });
+        });
+    });
 });

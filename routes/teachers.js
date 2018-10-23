@@ -40,8 +40,10 @@ router.addTeacher = (req, res) => {
 router.deleteTeacher = (req, res) => {
     //Delete the selected donation based on its id
     Teacher.findByIdAndRemove(req.params.id, function(err) {
-        if (err)
+        if (err){
+            res.status(404);
             res.json({ message: 'Teacher NOT DELETED!', errmsg : err } );
+        }
         else
             res.json({ message: 'Teacher Successfully Deleted!'});
     });
