@@ -1,3 +1,47 @@
+DELETE http://localhost:3000/courses/5bce430d173eb206ec46fbb6
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"David","gender":"male","courses_id":"5bc4f5d582a78003ce4dc30e"}
+
+<> 2018-10-22T105806.200.json
+
+###
+
+GET http://localhost:3000/courses/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"David","gender":"male","courses_id":"5bc4f5d582a78003ce4dc30e"}
+
+<> 2018-10-22T105756.200.json
+
+###
+
+DELETE http://localhost:3000/courses/5bce4129d6f3d006c58813ec
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"David","gender":"male","courses_id":"5bc4f5d582a78003ce4dc30e"}
+
+<> 2018-10-22T105752.200.json
+
+###
+
+GET http://localhost:3000/courses
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"David","gender":"male","courses_id":"5bc4f5d582a78003ce4dc30e"}
+
+<> 2018-10-22T105738.200.json
+
+###
+
 DELETE http://localhost:3000/teachers/5bce3928bf3c5e06131e7d1f
 Accept: */*
 Cache-Control: no-cache
@@ -499,42 +543,6 @@ Cache-Control: no-cache
 Content-Type: application/json
 
 <> 2018-10-08T124547.200.json
-
-###
-
-GET http://localhost:3000/selectcourses/10000001
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-08T101129.200.json
-
-###
-
-GET http://localhost:3000/selectcourses/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-08T101057.200.json
-
-###
-
-GET http://localhost:3000/selectcourses/10000001
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-08T101037.200.json
-
-###
-
-GET http://localhost:3000/selectcourses/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-08T100734.200.json
 
 ###
 
