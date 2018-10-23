@@ -61,8 +61,11 @@ router.incrementAge = (req, res) => {
 router.deleteStudent = (req, res) => {
     //Delete the selected donation based on its id
     Student.findByIdAndRemove(req.params.id, function(err) {
-        if (err)
+        if (err){
+            res.status(404);
             res.json({ message: 'Student NOT DELETED!', errmsg : err } );
+        }
+
         else
             res.json({ message: 'Student Successfully Deleted!'});
     });
