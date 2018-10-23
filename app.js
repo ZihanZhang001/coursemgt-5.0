@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const courses = require("./routes/courses");
-// const students = require("./routes/students");
+const students = require("./routes/students");
 const teachers = require("./routes/teachers");
 
 
