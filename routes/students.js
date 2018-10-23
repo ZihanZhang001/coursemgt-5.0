@@ -43,8 +43,10 @@ router.addStudent = (req, res) => {
 router.incrementAge = (req, res) => {
 
     Student.findById(req.params.id, function(err,student) {
-        if (err)
+        if (err){
+            res.status(404);
             res.json({ message: 'Student NOT Found!', errmsg : err } );
+        }
         else {
             student.age += 1;
             student.save(function (err) {

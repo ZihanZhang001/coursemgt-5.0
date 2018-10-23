@@ -73,4 +73,32 @@ describe('Students', function (){
                 });
         });
     });
+    describe('PUT /students/:id/age', () => {
+        it('should return a message and the student increment age by 1', function(done) {
+            chai.request(server)
+                .get('/students')
+                .end(function(err,res){
+                    chai.request(server)
+                        .put('/students/'+res.body[0]._id+'/age')
+                        .end(function(err, res) {
+                            expect(res).to.have.status(200);
+                            let student = res.body.data ;
+                            expect(student).to.include( { name: "Abby", age: 19  } );
+                            datastore.collection.drop();
+                            done();
+                        });
+                })
+
+        });
+        it('should return a 404 and a message for invalid student id', function(done) {
+            chai.request(server)
+                .put('/students/1100001/age')
+                .end(function(err, res) {
+                    expect(res).to.have.status(404);
+                    expect(res.body).to.have.property('message','Student NOT Found!' ) ;
+                    datastore.collection.drop();
+                    done();
+                });
+        });
+    });
 });
