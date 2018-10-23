@@ -30,9 +30,9 @@ describe('Students', function (){
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
                     expect(res.body.length).to.equal(1);
-                    let result = _.map(res.body, (course) => {
-                        return { name: course.name,
-                            age: course.age }
+                    let result = _.map(res.body, (students) => {
+                        return { name: students.name,
+                            age: students.age }
                     });
                     expect(result).to.include( { name: "Abby", age: 18  } );
                     // expect(result).to.include( { name: "english", type: "P"  } );
@@ -40,6 +40,37 @@ describe('Students', function (){
                     done();
                 });
 
+        });
+    });
+    describe('POST /students', function () {
+        it('should return confirmation message and update datastore', function(done) {
+            let student = {
+                name: "Wang" ,
+                gender: "male",
+                age:19,
+                college:"Business",
+                courses_id: [mongoose.Types.ObjectId("5bc4f61282a78003ce4dc30f"),mongoose.Types.ObjectId("5bc4f61e82a78003ce4dc310")]
+            };
+            chai.request(server)
+                .post('/students')
+                .send(student)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Student Successfully Added!' );
+                    done();
+                });
+        });
+        after(function  (done) {
+            chai.request(server)
+                .get('/students')
+                .end(function(err, res) {
+                    let result = _.map(res.body, (student) => {
+                        return { name: student.name };
+                    }  );
+                    expect(result).to.include( { name: 'Wang'} );
+                    datastore.collection.drop();
+                    done();
+                });
         });
     });
 });
