@@ -39,4 +39,33 @@ describe('Teachers', function (){
 
         });
     });
+    describe('POST /teachers', function () {
+        it('should return confirmation message and update datastore', function(done) {
+            let teacher = {
+                name: "Dali" ,
+                gender: "male",
+                courses_id: mongoose.Types.ObjectId("5bc4f61282a78003ce4dc30f")
+            };
+            chai.request(server)
+                .post('/teachers')
+                .send(teacher)
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Teacher Successfully Added!' );
+                    done();
+                });
+        });
+        after(function  (done) {
+            chai.request(server)
+                .get('/teachers')
+                .end(function(err, res) {
+                    let result = _.map(res.body, (teacher) => {
+                        return { name: teacher.name };
+                    }  );
+                    expect(result).to.include( { name: 'Dali'} );
+                    datastore.collection.drop();
+                    done();
+                });
+        });
+    });
 });
