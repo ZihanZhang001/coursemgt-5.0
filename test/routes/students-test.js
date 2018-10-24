@@ -84,6 +84,20 @@ describe('Students', function (){
 
         });
     });
+    describe('GET /students/courses/:id',  () => {
+        it('should return reference courses taked by a student in an array', function(done) {
+            chai.request(server)
+                .get('/students/courses/5bc50b7bc6fff5975531bdb9')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal('Abby studys math ,english ,' );
+                    datastore.collection.drop();
+                    cor.collection.drop();
+                    done();
+                });
+
+        });
+    });
 
     describe('POST /students', function () {
         it('should return confirmation message and update datastore', function(done) {
