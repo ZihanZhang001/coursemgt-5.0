@@ -98,7 +98,23 @@ describe('Students', function (){
 
         });
     });
+    describe('GET /students/fuzzystudent/:keyword',  () => {
+        it('should return a student in an array by fuzzy search', function(done) {
+            chai.request(server)
+                .get('/students/fuzzystudent/ab')
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    let result = _.map(res.body, (student) => {
+                        return { name: student.name,
+                            age: student.age }
+                    });
+                    expect(result).to.include( { name: "Abby", age: 18  } );                    datastore.collection.drop();
+                    cor.collection.drop();
+                    done();
+                });
 
+        });
+    });
     describe('POST /students', function () {
         it('should return confirmation message and update datastore', function(done) {
             let student = {
