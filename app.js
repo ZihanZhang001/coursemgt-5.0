@@ -35,7 +35,7 @@ app.delete('/courses/:id', courses.deleteCourse);
 
 app.get('/students', students.findAll);
 app.get('/students/:id', students.findOne);
-app.get('/students/fuzzystudent/:name', students.fuzzystudent);
+app.get('/students/fuzzystudent/:keyword', students.fuzzystudent);
 app.get('/students/courses/:id',students.getcourses);
 app.post('/students',students.addStudent);
 app.put('/students/:id/age', students.incrementAge);

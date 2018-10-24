@@ -72,7 +72,7 @@ describe('Teachers', function (){
 
         });
     });
-    describe.only('GET /teachers/courses/:id',  () => {
+    describe('GET /teachers/courses/:id',  () => {
         it('should return reference courses teached by a teacher in an array', function(done) {
             chai.request(server)
                 .get('/teachers/courses/5bce37ee9f5b4f90ef56d037')
