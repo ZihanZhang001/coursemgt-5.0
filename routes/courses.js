@@ -80,16 +80,16 @@ router.deleteCourse = (req, res) => {
 // db.once('open', function () {
 //     console.log('Successfully Connected to [ ' + db.name + ' ]');
 // });
-// var config = require('../_config');
-// var app = express();
-// // *** mongoose *** ///
-// mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
-//     if(err) {
-//         console.log('Error connecting to the database. ' + err);
-//     } else {
-//         console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
-//     }
-// });
+var config = require('../_config');
+var app = express();
+// *** mongoose *** ///
+mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
+    if(err) {
+        console.log('Error connecting to the database. ' + err);
+    } else {
+        console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
+    }
+});
 // var mongodbUri ='mongodb://coursesdb:a123456@ds139883.mlab.com:39883/coursesdb';
 // mongoose.connect(mongodbUri);
 module.exports = router;

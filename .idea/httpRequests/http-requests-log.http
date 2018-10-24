@@ -1,3 +1,14 @@
+GET http://localhost:3000/students/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
+
+<> 2018-10-24T022721.200.json
+
+###
+
 POST http://localhost:3000/students/
 Accept: */*
 Cache-Control: no-cache
@@ -534,17 +545,6 @@ Content-Type: application/json
 {"name":"David","gender":"male","courses_id":"5bc4f5d582a78003ce4dc30e"}
 
 <> 2018-10-23T090109.200.json
-
-###
-
-GET http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"David","gender":"male","courses_id":"5bc4f5d582a78003ce4dc30e"}
-
-<> 2018-10-23T090059.200.json
 
 ###
 
