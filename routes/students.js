@@ -32,7 +32,7 @@ router.addStudent = (req, res) => {
     student.gender = req.body.gender;
     student.age = req.body.age;
     student.college = req.body.college;
-    student.courses_id =req.body. courses_id;
+    student.courses_id =req.body.courses_id;
     student.save(function(err) {
         if (err)
             res.json({ message: 'Student NOT Added!', errmsg : err } );
@@ -100,7 +100,7 @@ router.getcourses = (req,res) =>{
             }
             // for(i in a)
             // {
-            res.json({meassage:student.name + " studys " + a,data:student});
+            res.json({message:student.name + " studys " + a,data:student});
             // }
             // var result=Student.findOne({ "_id" : req.params.id},{"courses_id":1});
             // res.json(student.name + " studys " + result.name, null, 5);
@@ -121,14 +121,16 @@ router.getcourses = (req,res) =>{
 //     console.log('Successfully Connected to [ ' + db.name + ' ]');
 // });
 // module.exports = router;
-var config = require('../_config');
-var app = express();
-// *** mongoose *** ///
-mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
-    if(err) {
-        console.log('Error connecting to the database. ' + err);
-    } else {
-        console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
-    }
-});
+// var config = require('../_config');
+// var app = express();
+// // *** mongoose *** ///
+// mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
+//     if(err) {
+//         console.log('Error connecting to the database. ' + err);
+//     } else {
+//         console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
+//     }
+// });
+var mongodbUri ='mongodb://coursesdb:a123456@ds139883.mlab.com:39883/coursesdb';
+mongoose.connect(mongodbUri);
 module.exports = router;

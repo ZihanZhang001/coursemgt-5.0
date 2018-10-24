@@ -1,0 +1,12 @@
+{
+  "message": "Teacher Successfully Added!",
+  "data": {
+    "courses_id": [
+      "5bc4f5d582a78003ce4dc30e"
+    ],
+    "_id": "5bd057a3b19fbc08b8d703d4",
+    "name": "David",
+    "gender": "male",
+    "__v": 0
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "message": "Student Successfully Added!",
+  "data": {
+    "courses_id": [
+      "5bc4f5d582a78003ce4dc30e",
+      "5bc4f61e82a78003ce4dc310"
+    ],
+    "_id": "5bcf7e3bcda80f02fa827877",
+    "name": "Make",
+    "gender": "male",
+    "age": 16,
+    "college": "Computing",
+    "__v": 0
+  }
+}

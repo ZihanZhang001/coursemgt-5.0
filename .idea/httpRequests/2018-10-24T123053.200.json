@@ -1,0 +1,15 @@
+{
+  "message": "Student Successfully Added!",
+  "data": {
+    "courses_id": [
+      "5bc4f5d582a78003ce4dc30e",
+      "5bc4f61282a78003ce4dc30f"
+    ],
+    "_id": "5bd057edb19fbc08b8d703d5",
+    "name": "Abby",
+    "gender": "female",
+    "age": 18,
+    "college": "Business",
+    "__v": 0
+  }
+}

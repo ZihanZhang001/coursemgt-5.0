@@ -1,0 +1,12 @@
+{
+  "message": "Teacher Successfully Added!",
+  "data": {
+    "courses_id": [
+      "5bc4f61282a78003ce4dc30f"
+    ],
+    "_id": "5bd05749b19fbc08b8d703d2",
+    "name": "Dali",
+    "gender": "male",
+    "__v": 0
+  }
+}

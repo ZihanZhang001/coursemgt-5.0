@@ -4,6 +4,7 @@ let chaiHttp = require('chai-http');
 let server = require('../../bin/www');
 let expect = chai.expect;
 let datastore = require('../../models/teachers');
+let cor = require('../../models/courses');
 chai.use(chaiHttp);
 let _ = require('lodash' );
 chai.use(require('chai-things'));
@@ -17,6 +18,16 @@ describe('Teachers', function (){
             courses_id:mongoose.Types.ObjectId("5bc4f5d582a78003ce4dc30e")
         });
         newData.save(function(err){
+            done();
+        });
+    });
+    beforeEach(function(done){
+        var newCor=new cor({
+            _id:mongoose.Types.ObjectId("5bc4f5d582a78003ce4dc30e"),
+            name:"math",
+
+        });
+        newCor.save(function(err){
             done();
         });
     });
@@ -34,6 +45,7 @@ describe('Teachers', function (){
                     expect(result).to.include( { name: "David" } );
                     // expect(result).to.include( { name: "english", type: "P"  } );
                     datastore.collection.drop();
+                    cor.collection.drop();
                     done();
                 });
 
@@ -64,6 +76,7 @@ describe('Teachers', function (){
                     }  );
                     expect(result).to.include( { name: 'Dali'} );
                     datastore.collection.drop();
+                    cor.collection.drop();
                     done();
                 });
         });
@@ -110,6 +123,7 @@ describe('Teachers', function (){
                         expect(res).to.have.status(404);
                         expect(res.body).to.have.property('message', 'Teacher NOT DELETED!');
                         datastore.collection.drop();
+                        cor.collection.drop();
                         done();
                     });
             });

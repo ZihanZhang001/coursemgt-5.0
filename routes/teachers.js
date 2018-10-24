@@ -24,6 +24,26 @@ router.findOne = (req, res) => {
             res.send(JSON.stringify(teacher,null,5));
     });
 }
+router.getcourses = (req,res) =>{
+    res.setHeader('Content-Type', 'application/json');
+    Teacher.findOne({ "_id" : req.params.id }).populate({
+        path:'courses_id',
+        select: 'name',
+        model:'Courses'
+    }).exec(function(err,teacher){
+        if(err)
+            res.send(err);
+        else {
+            var a = new String("");
+            for(var i=0;i<teacher.courses_id.length;i++){
+                a+=teacher.courses_id[i].name;
+                a+=" ,";
+            }
+            res.json({message:teacher.name + " teaches " + a,data:teacher});
+        }
+    })
+
+}
 router.addTeacher = (req, res) => {
 
     var teacher = new Teacher();
@@ -59,14 +79,16 @@ router.deleteTeacher = (req, res) => {
 // db.once('open', function () {
 //     console.log('Successfully Connected to [ ' + db.name + ' ]');
 // });
-var config = require('../_config');
-var app = express();
-// *** mongoose *** ///
-mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
-    if(err) {
-        console.log('Error connecting to the database. ' + err);
-    } else {
-        console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
-    }
-});
+// var config = require('../_config');
+// var app = express();
+// // *** mongoose *** ///
+// mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
+//     if(err) {
+//         console.log('Error connecting to the database. ' + err);
+//     } else {
+//         console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
+//     }
+// });
+var mongodbUri ='mongodb://coursesdb:a123456@ds139883.mlab.com:39883/coursesdb';
+mongoose.connect(mongodbUri);
 module.exports = router;
