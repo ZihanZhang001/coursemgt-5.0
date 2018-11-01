@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "5bc4f5d582a78003ce4dc30e",
+    "name": "math",
+    "type": "P",
+    "size": 16,
+    "room": "A01",
+    "time": 9.15
+  },
+  {
+    "_id": "5bc4f61282a78003ce4dc30f",
+    "name": "english",
+    "type": "P",
+    "size": 30,
+    "room": "A02",
+    "time": 10.15
+  },
+  {
+    "_id": "5bc4f61e82a78003ce4dc310",
+    "name": "software",
+    "type": "L",
+    "size": 100,
+    "room": "A03",
+    "time": 15.15
+  }
+]

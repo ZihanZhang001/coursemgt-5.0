@@ -1,0 +1,61 @@
+[
+  {
+    "courses_id": [
+      "5bc4f5d582a78003ce4dc30e",
+      "5bc4f61282a78003ce4dc30f"
+    ],
+    "_id": "5bc50b7bc6fff5975531bdb9",
+    "name": "Abby",
+    "gender": "female",
+    "age": 19,
+    "college": "Business"
+  },
+  {
+    "courses_id": [
+      "5bc4f61282a78003ce4dc30f",
+      "5bc4f61e82a78003ce4dc310"
+    ],
+    "_id": "5bcf7e30cda80f02fa827876",
+    "name": "Wang",
+    "gender": "male",
+    "age": 19,
+    "college": "Math",
+    "__v": 0
+  },
+  {
+    "courses_id": [
+      "5bc4f5d582a78003ce4dc30e",
+      "5bc4f61e82a78003ce4dc310"
+    ],
+    "_id": "5bcf7e3bcda80f02fa827877",
+    "name": "Make",
+    "gender": "male",
+    "age": 16,
+    "college": "Computing",
+    "__v": 0
+  },
+  {
+    "courses_id": [
+      "5bc4f61282a78003ce4dc30f",
+      "5bc4f61e82a78003ce4dc310"
+    ],
+    "_id": "5bd220f1da1f02034c36e9a0",
+    "name": "Mack",
+    "gender": "male",
+    "age": 21,
+    "college": "Math",
+    "__v": 0
+  },
+  {
+    "courses_id": [
+      "5bc4f61282a78003ce4dc30f",
+      "5bc4f61e82a78003ce4dc310"
+    ],
+    "_id": "5bd22402c2ee190395d0b9e6",
+    "name": "Mack",
+    "gender": "male",
+    "age": 21,
+    "college": "Math",
+    "__v": 0
+  }
+]
