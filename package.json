@@ -16,6 +16,7 @@
     "mongo": "^0.1.0",
     "mongodb": "^3.1.8",
     "mongodb-core": "^3.1.7",
+    "mongodb-uri": "^0.9.7",
     "mongoose": "^5.3.5",
     "morgan": "~1.9.0"
   },

@@ -140,7 +140,7 @@ var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000
 
 //ENTER YOUR MONGODB CONNECTION STRING HERE IN PLACE OF MY ONE
 var mongodbUri = 'mongodb://ds129233.mlab.com:29233/heroku_r7s4f06j';
-var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+var mongooseUri = require('mongodb-uri').formatMongoose(mongodbUri);
 
 
 //mongoose.connect('mongodb://localhost:27017/donationsdb');

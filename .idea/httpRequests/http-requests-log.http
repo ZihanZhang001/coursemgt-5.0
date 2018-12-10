@@ -1,3 +1,47 @@
+POST http://localhost:3000/courses/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"software","type": "L", "size": 100,"room":"A03","time":15.15}
+
+<> 2018-12-10T043931.200.json
+
+###
+
+POST http://localhost:3000/courses/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"english","type": "P", "size":30,"room":"A02","time":10.15}
+
+<> 2018-12-10T043916.200.json
+
+###
+
+POST http://localhost:3000/courses/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"math","type": "P","size": 16,"room":"A01","time":9.15}
+
+<> 2018-12-10T043839.200.json
+
+###
+
+GET http://localhost:3000/courses/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123"}
+
+<> 2018-12-10T043818.200.json
+
+###
+
 POST http://localhost:3000/users/
 Accept: */*
 Cache-Control: no-cache
@@ -497,48 +541,6 @@ Content-Type: application/json
 {"name":"Mack","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
 
 <> 2018-10-25T090147.200.json
-
-###
-
-GET http://localhost:3000/courses/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Mack","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-25T090135.200.json
-
-###
-
-GET http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Mack","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-25T090057.200.json
-
-###
-
-POST http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Mack","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-25T090050.200.json
-
-###
-
-GET http://localhost:3000/students/courses/5bc50b7bc6fff5975531bdb9
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-25T090003.200.json
 
 ###
 

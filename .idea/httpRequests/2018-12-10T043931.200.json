@@ -1,0 +1,12 @@
+{
+  "message": "Course Successfully Added!",
+  "data": {
+    "_id": "5c0e96c3aeca091ce579244d",
+    "name": "software",
+    "type": "L",
+    "size": 100,
+    "room": "A03",
+    "time": 15.15,
+    "__v": 0
+  }
+}
