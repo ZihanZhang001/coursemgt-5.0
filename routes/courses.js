@@ -39,6 +39,26 @@ router.addCourse = (req, res) => {
             res.json({ message: 'Course Successfully Added!', data: course });
     });
 }
+router.changeone = (req,res)=>{
+    res.setHeader('Content-Type', 'application/json');
+    Course.findById(req.params.id,function(err,course){
+        if(err)
+            res.json({message:"Info Not Found",errmsg:err});
+        else{
+            course.type = req.body.type;
+            course.time = req.body.time;
+            course.name = req.body.name;
+            course.size = req.body.size;
+            course.room = req.body.room;
+            course.save(function(err) {
+                if (err)
+                    res.json({ message: 'Change Failed!', errmsg : err } );
+                else
+                    res.json({ message: 'Successfully Changed!', data: course });
+            });
+        }
+    })
+}
 router.incrementSize = (req, res) => {
 
     Course.findById(req.params.id, function(err,course) {

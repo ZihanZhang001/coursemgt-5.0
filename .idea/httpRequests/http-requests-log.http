@@ -1,3 +1,221 @@
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123"}
+
+<> 2018-12-09T034955.200.json
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123"}
+
+<> 2018-12-09T033304.200.json
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123","nickName":"ad"}
+
+<> 2018-12-09T033235.200.json
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pss":"123","nickName":"ad"}
+
+<> 2018-12-09T033229.200.json
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123","nickName":"ad"}
+
+<> 2018-12-09T033222.200.json
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123","nickName":"ad"}
+
+<> 2018-12-09T033216.200.json
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2018-12-09T033155.200.json
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123","nickName":"ad"}
+
+<> 2018-12-09T033144.200.json
+
+###
+
+GET http://localhost:3000/courses/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123"}
+
+<> 2018-12-09T032821.200.json
+
+###
+
+GET http://localhost:3000/courses/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123"}
+
+<> 2018-12-09T032716.404.html
+
+###
+
+GET http://localhost:3000/courses/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123"}
+
+<> 2018-12-09T032706.404.html
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123"}
+
+<> 2018-12-09T032655.404.html
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":"123"}
+
+<> 2018-12-09T031741.200.json
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":123}
+
+<> 2018-12-09T031656.200.json
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":123}
+
+<> 2018-12-09T031648.200.json
+
+###
+
+POST http://localhost:3000/users/
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":123}
+
+<> 2018-12-09T031337.404.html
+
+###
+
+POST http://localhost:3000/users/validate
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"admin","pass":123}
+
+<> 2018-12-09T031304.404.html
+
+###
+
+GET http://localhost:3000/courses
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"Mack1","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
+
+<> 2018-12-06T053650.200.json
+
+###
+
+GET http://localhost:3000/courses
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"Mack1","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
+
+<> 2018-12-06T121241.200.json
+
+###
+
+GET http://localhost:3000/courses
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"Mack1","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
+
+<> 2018-12-05T104449.200.json
+
+###
+
 DELETE http://localhost:3000/students/5bd22402c2ee190395d0b9e6
 Accept: */*
 Cache-Control: no-cache
@@ -321,210 +539,6 @@ Cache-Control: no-cache
 Content-Type: application/json
 
 <> 2018-10-25T090003.200.json
-
-###
-
-GET http://localhost:3000/students
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-25T085945.200.json
-
-###
-
-GET http://localhost:3000/courses/5bc4f5d582a78003ce4dc30e
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-25T085913.200.json
-
-###
-
-GET http://localhost:3000/courses/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-25T085902.200.json
-
-###
-
-GET http://localhost:3000/courses/5bc4f5d582a78003ce4dc30e
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-25T085700.200.json
-
-###
-
-GET http://localhost:3000/courses
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-25T085646.200.json
-
-###
-
-GET http://localhost:3000/students/courses/5bd21553feee2602d049ed52
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-25T082019.200.json
-
-###
-
-POST http://localhost:3000/students/5bd21553feee2602d049ed52
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-25T082001.404.html
-
-###
-
-POST http://localhost:3000/students//5bd21553feee2602d049ed52
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-<> 2018-10-25T082000.404.html
-
-###
-
-POST http://localhost:3000/students/courses/5bd21553feee2602d049ed52
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Mack","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-25T081128.404.html
-
-###
-
-POST http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Mack","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-25T081115.200.json
-
-###
-
-GET http://localhost:3000/students/
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-25T081042.200.json
-
-###
-
-GET http://localhost:3000/students/courses/5bc50b7bc6fff5975531bdb9
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-25T080738.200.json
-
-###
-
-GET http://localhost:3000/students/fuzzystudent/b
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-25T080725.200.json
-
-###
-
-GET http://localhost:3000/students/fuzzystudent/b
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-24T031956.200.json
-
-###
-
-GET http://localhost:3000/students/fuzzystudent/b
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-24T031909.200.json
-
-###
-
-GET http://localhost:3000/students/fuzzystudent/a
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-24T031907.200.json
-
-###
-
-GET http://localhost:3000/students/fuzzystudent/ab
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-24T031836.200.json
-
-###
-
-GET http://localhost:3000/students/fuzzystudent/ab
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-24T031807.200.json
-
-###
-
-GET http://localhost:3000/students/courses/5bc50b7bc6fff5975531bdb9
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-24T030403.200.json
-
-###
-
-GET http://localhost:3000/students
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Make","gender":"male","age":16,"college":"Computing","courses_id":["5bc4f5d582a78003ce4dc30e","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-24T025745.200.json
 
 ###
 
