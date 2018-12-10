@@ -121,16 +121,29 @@ router.getcourses = (req,res) =>{
 //     console.log('Successfully Connected to [ ' + db.name + ' ]');
 // });
 // module.exports = router;
-var config = require('../_config');
-var app = express();
-// *** mongoose *** ///
-mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
-    if(err) {
-        console.log('Error connecting to the database. ' + err);
-    } else {
-        console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
-    }
-});
+// var config = require('../_config');
+// var app = express();
+// // *** mongoose *** ///
+// mongoose.connect(config.mongoURI[app.settings.env], function(err, res) {
+//     if(err) {
+//         console.log('Error connecting to the database. ' + err);
+//     } else {
+//         console.log('Connected to Database: ' + config.mongoURI[app.settings.env]);
+//     }
+// });
 // var mongodbUri ='mongodb://coursesdb:a123456@ds139883.mlab.com:39883/coursesdb';
 // mongoose.connect(mongodbUri);
+
+var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+    replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } },
+    user: 'zihan', pass: 'a123456' };
+
+//ENTER YOUR MONGODB CONNECTION STRING HERE IN PLACE OF MY ONE
+var mongodbUri = 'mongodb://ds129233.mlab.com:29233/heroku_r7s4f06j';
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+
+//mongoose.connect('mongodb://localhost:27017/donationsdb');
+mongoose.connect(mongooseUri,options);
+
 module.exports = router;
