@@ -1,15 +1,26 @@
 process.env.NODE_ENV = 'test';
 import chai from 'chai';
 import chaiHttp from 'chai-http' ;
-import server from '../../bin/www';
+// import server from '../../bin/www';
+var server = null ;
 let expect = chai.expect;
-import datastore from '../../models/courses';
+// import datastore from '../../models/courses';
+var datastore = null ;
 chai.use(chaiHttp);
 import _ from 'lodash';
 import things from 'chai-things'
 chai.use( things);
 
 describe('Courses', function (){
+    before(function(){
+        delete require.cache[require.resolve('../../bin/www')];
+        delete require.cache[require.resolve('../../models/courses')];
+        datastore = require('../../models/courses');
+        server = require('../../bin/www');
+    });
+    after(function (done) {
+        server.close(done);
+    });
     beforeEach(function(done){
         var newData=new datastore({
             name:"math",

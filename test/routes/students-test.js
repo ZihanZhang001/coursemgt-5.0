@@ -1,10 +1,13 @@
 process.env.NODE_ENV = 'test';
 import chai from 'chai';
 import chaiHttp from 'chai-http' ;
-import server from '../../bin/www';
+// import server from '../../bin/www';
+var server = null ;
 let expect = chai.expect;
-import datastore from '../../models/students';
-import cor from '../../models/courses';
+// import datastore from '../../models/students';
+var datastore = null ;
+// import cor from '../../models/courses';
+var cor = null ;
 chai.use(chaiHttp);
 import _ from 'lodash';
 import things from 'chai-things'
@@ -12,6 +15,16 @@ chai.use( things);
 let mongoose = require('mongoose');
 
 describe('Students', function (){
+    before(function(){
+        delete require.cache[require.resolve('../../bin/www')];
+        delete require.cache[require.resolve('../../models/students')];
+        datastore = require('../../models/students');
+        cor = require('../../models/courses');
+        server = require('../../bin/www');
+    });
+    after(function (done) {
+        server.close(done);
+    });
     beforeEach(function(done){
         var newData=new datastore({
             _id:mongoose.Types.ObjectId("5bc50b7bc6fff5975531bdb9"),
