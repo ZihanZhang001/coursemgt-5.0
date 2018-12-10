@@ -1,12 +1,13 @@
 process.env.NODE_ENV = 'test';
-let chai = require('chai');
-let chaiHttp = require('chai-http');
-let server = require('../../bin/www');
+import chai from 'chai';
+import chaiHttp from 'chai-http' ;
+import server from '../../bin/www';
 let expect = chai.expect;
-let datastore = require('../../models/courses');
+import datastore from '../../models/courses';
 chai.use(chaiHttp);
-let _ = require('lodash' );
-chai.use(require('chai-things'));
+import _ from 'lodash';
+import things from 'chai-things'
+chai.use( things);
 
 describe('Courses', function (){
     beforeEach(function(done){

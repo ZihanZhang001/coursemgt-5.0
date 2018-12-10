@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
-var Student = require('../models/students');
-let express = require('express');
+import Student from '../models/students';
+import express from 'express';
 let router = express.Router();
 
 router.findAll = (req, res) => {

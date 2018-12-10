@@ -1,7 +1,7 @@
-let express = require('express');
+import express from 'express';
 let router = express.Router();
 let mongoose = require('mongoose');
-var Teacher = require('../models/teachers');
+import Teacher from '../models/teachers';
 
 router.findAll = (req, res) => {
     // Return a JSON representation of our list

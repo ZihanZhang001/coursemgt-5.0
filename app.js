@@ -17,7 +17,7 @@ var app = express();
 //     res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
 //     next();
 // });
-bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 
