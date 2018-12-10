@@ -8,6 +8,7 @@
     "server": "cross-env NODE_ENV=dev PORT=3001 node lib/bin/www",
     "server:watch": "cross-env NODE_ENV=dev nodemon --exec babel-node bin/www",
     "start": "npm-run-all test build server",
+    "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register test/routes/teachers-test.js",
     "test:watch": "npm run test -- --watch",
     "clean": "rimraf ./lib && mkdir lib",
     "lint": "esw  ./test ./routes ./models/ app.js",
