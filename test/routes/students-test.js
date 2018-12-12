@@ -18,6 +18,7 @@ describe('Students', function (){
     before(function(){
         delete require.cache[require.resolve('../../bin/www')];
         delete require.cache[require.resolve('../../models/students')];
+        delete require.cache[require.resolve('../../models/courses')];
         datastore = require('../../models/students');
         cor = require('../../models/courses');
         server = require('../../bin/www');
