@@ -1,0 +1,22 @@
+{
+    "include": [
+        "routes/**/*.js",
+        "models/**/*.js",
+        "app.js"
+    ],
+    "require": [
+        "babel-register"
+    ],
+    "reporter": [
+        "lcov",
+        "text-summary"
+    ],
+    "check-coverage": true,
+        "per-file": false,
+        "lines": 50,
+        "statements": 50,
+        "functions": 20,
+        "branches": 10,
+    "sourceMap": false,
+    "instrument": false
+ }

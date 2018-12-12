@@ -5,7 +5,11 @@ Content-Type: application/json
 
 {"name":"software","type": "L", "size": 100,"room":"A03","time":15.15}
 
+<<<<<<< HEAD
 <> 2018-12-12T113711.200.json
+=======
+<> 2018-12-10T103929.200.json
+>>>>>>> development
 
 ###
 
