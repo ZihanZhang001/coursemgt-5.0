@@ -1,3 +1,23 @@
+POST http://localhost:8080/users/addUser
+Accept: */*
+Cache-Control: no-cache
+
+{"name":"admin","pass":"123","nickName":"ad"}
+
+<> 2018-12-18T101215.404.html
+
+###
+
+POST http://localhost:8080/resources
+Accept: */*
+Cache-Control: no-cache
+
+{"name":"admin","pass":"123","nickName":"ad"}
+
+<> 2018-12-18T101151.404.html
+
+###
+
 GET http://localhost:3000/courses/
 Accept: */*
 Cache-Control: no-cache
@@ -523,28 +543,6 @@ Content-Type: application/json
 {"name":"Mack","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
 
 <> 2018-10-25T090229.200.json
-
-###
-
-DELETE http://localhost:3000/students/5bd21553feee2602d049ed52
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Mack","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-25T090219.200.json
-
-###
-
-GET http://localhost:3000/students
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Mack","gender":"male","age":21,"college":"Math","courses_id":["5bc4f61282a78003ce4dc30f","5bc4f61e82a78003ce4dc310"]}
-
-<> 2018-10-25T090207.200.json
 
 ###
 
